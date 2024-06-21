@@ -14,7 +14,7 @@ body {
 .nav-bar {
     width: 100%;
     display: inline-block;
-    background-color: #1C539F;
+    background-color: #6f1c9f;
     font-family: "Roboto", serif;
     font-weight: 700 !important;
     padding-top: 10px;
@@ -50,7 +50,7 @@ body {
 }
 
 .profile {
-    background-color: #1d539f !important;
+    background-color: #6f1c9f !important;
     text-align: center;
     height: 320px;
     margin-bottom: 50px;
