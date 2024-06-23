@@ -22,19 +22,43 @@
 <body>
     <header class="nav-bar">
         <div class="nav-content">
-            <a href="/">
-                <div class="nav-logo">
-                    <img src="./static/img/logo.svg" />
-                </div>
-            </a>
+            <a href="/">Home</a>
+        </div>
+        <div class="nav-content">
+            <a href="/hobbies">About Me</a>
+        </div>
+        <div class="nav-content">
+            <a href="/hobbies">Experience</a>
+        </div>
+        <div class="nav-content">
+            <a href="/hobbies">Hobbies</a>
         </div>
     </header>
-
+    {% block content %}
     <div class="profile">
-        <div id="profile-picture" class="profile-picture">
-            <img src="./static/img/xime2024.jpg">
+        <div class="profile-element">
+            <h2>Hi, my name is</h2>
+            <h1>{{ title }}</h1>
+            <h3>I'm a Computer Science Engineer</h3>
         </div>
-        <h1>{{ title }}</h1>
+        <div class="profile-element">
+            <div id="profile-picture" class="profile-picture">
+                <img src="./static/img/xime2024.jpg">
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    <div class="sections" id="about-me">
+        <h1>About me</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi eius et, ad numquam deleniti, quo, hic ratione qui laboriosam voluptates nihil fuga! Similique aspernatur ducimus molestias error, impedit at eveniet?</p>
+    </div>
+    <div class="sections" id="work">
+        <h1>Work Experiences</h1>
+        <ul>
+            <li class="works">Lorem</li>
+            <li class="works">ipsum</li>
+            <li class="works">dolor</li>
+        </ul>
     </div>
 </body>
 </html>

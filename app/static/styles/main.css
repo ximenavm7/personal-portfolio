@@ -1,68 +1,60 @@
 p, h1, h2, h3, h4, h5, h6, button {
-    font-family: "Roboto", serif;
+    font-family: 'Courier New', Courier, monospace;
+    color: #6b0863;
+}
+
+.nav-bar, body {
+    background-color: #E7EFC5;
 }
 
 body {
-    background-color: #f5f5f9;
     background-size: cover;
     width: auto; 
     overflow-x: hidden;
-    font-family: "Roboto", serif;
+    font-family: 'Courier New', Courier, monospace;
     margin: 0px;
 }
 
 .nav-bar {
     width: 100%;
-    display: inline-block;
-    background-color: #6f1c9f;
-    font-family: "Roboto", serif;
-    font-weight: 700 !important;
-    padding-top: 10px;
-}
-
-.nav-content .logo-touch-target {
-    display: inline-flex;
-    height: 60%;
-    width: 350px;
-}
-
-.nav-content .nav-logo {
-    height: 60px;
-    margin: auto;
-}
-
-.nav-logo {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 15px 0;
+    box-shadow: 0px 5px 30px 0px rgba(56,56,56,0.5);
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
-.nav-logo img {
-    width: 200px;
+.nav-content {
+    font-size: 18px;
+    text-align: center;
 }
 
-.nav-content nav {
-    display: block;
-    width: 100%;
-    text-align: right;
-    padding-top: 0px;
-    padding-right: 0px;
+a {
+    color: #6b0863;
+    text-decoration: none;
 }
 
 .profile {
-    background-color: #6f1c9f !important;
-    text-align: center;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 320px;
-    margin-bottom: 50px;
+    margin: 50px;
+    gap: 80px;
 }
 
 .profile h1 {
-        font-size: 50px;
-        font-weight: 700;
-        color: white;
+    font-size: 50px;
+    font-weight: 700;
+    color: #33032F;
 }
 
-.profile img {
+.profile h1, .profile h2 {
+    margin: 0;
+}
+
+img {
         border-radius: 50%;
         max-width: 100%;
         max-height: 100%;
@@ -72,26 +64,19 @@ body {
         padding: 20px;
 }
 
-.profile .profile-picture {
+/* Secciones */
+
+.profile-picture {
     margin-bottom: 30px;
     height: 200px;
 }
 
-.banner {
-    padding: 20px 0px 50px 0px;
-    height: 150px;
-    background-color: #1d539f;
+.sections {
+    height: 200px;
+    margin: 20px 50px;
+    text-align: justify;
 }
 
-.banner .logo {
-    max-width:180px;
-    max-height:60px;
-    width: auto;
-    height: auto;
-}
-
-.banner .title {
-    color: white;
-    font-size: 50px;
-    font-weight: 700;
+#about-me h1 {
+    text-align: right;
 }
