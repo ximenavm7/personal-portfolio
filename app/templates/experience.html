@@ -1,0 +1,28 @@
+{%extends "index.html"%}
+{%block head%}
+<link lang='sass' rel="stylesheet" href="./static/styles/experienceStyles.css">
+{%endblock%}
+{% block content %}
+<h1>{{ title }}</h1>
+<div class="experience">
+    <div class="sections" id="education">
+        <h2>My Education</h2>
+        <div class="education-element">
+            <img src="./static/img/udlap.png" alt="University of Las Americas logo">
+            <div class="info">
+                <h4>Computer Systems Engineering - <a href="https://www.udlap.mx/web/en/">UDLAP</a></h3>
+                <p><b>period here</b></p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi magnam atque delectus perspiciatis aliquam corrupti quisquam deleniti laborum quidem reiciendis unde aperiam molestiae rerum praesentium nemo culpa, iusto fugit nisi.</p>
+            </div>
+        </div>
+    </div>
+    <div class="sections" id="work">
+        <h2>Work Experiences</h2>
+        <ul>
+            <li class="works">Lorem</li>
+            <li class="works">ipsum</li>
+            <li class="works">dolor</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

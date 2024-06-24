@@ -1,0 +1,21 @@
+h1 {
+    padding: 40px 40px;
+    font-size: 40px;
+    color: #33032F;
+}
+
+.hobbies-element {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: justify;
+    padding: 55px 40px;
+}
+
+.info {
+    width: 80%;
+} 
+
+.hobbies-element img {
+    height: 180px;
+}

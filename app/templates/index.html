@@ -17,6 +17,8 @@
     <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
     <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
     <title>{{ title }}</title>
+    {%block head%}
+    {%endblock%}
 </head>
 
 <body>
@@ -25,14 +27,22 @@
             <a href="/">Home</a>
         </div>
         <div class="nav-content">
-            <a href="/hobbies">About Me</a>
-        </div>
-        <div class="nav-content">
-            <a href="/hobbies">Experience</a>
+            <a href="/experience">Experience</a>
         </div>
         <div class="nav-content">
             <a href="/hobbies">Hobbies</a>
         </div>
+        <div class="dropdown">
+            <span>Menu</span>
+            <div class="dropdown-content">
+              <ul>
+                <li><a href="/#about-me">About Me</a></li>
+                <li><a href="/experience">Experience</a></li>
+                <li><a href="/hobbies">Hobbies</a></li>
+                <li><a href="/hobbies">Education</a></li>
+              </ul>
+            </div>
+          </div>
     </header>
     {% block content %}
     <div class="profile">
@@ -47,18 +57,12 @@
             </div>
         </div>
     </div>
-    {% endblock %}
     <div class="sections" id="about-me">
         <h1>About me</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi eius et, ad numquam deleniti, quo, hic ratione qui laboriosam voluptates nihil fuga! Similique aspernatur ducimus molestias error, impedit at eveniet?</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum quibusdam quis incidunt maxime dolore? Omnis voluptatibus aspernatur, tempora quidem at laboriosam consequatur libero assumenda tempore est culpa eius excepturi sed?
+        Dignissimos magnam dolorum vero natus nemo minima quas veritatis, repellat nostrum quia sit nisi culpa minus asperiores repellendus dolor. Distinctio neque tempore nihil quos in veniam repellendus magni commodi! Nostrum!
+        Earum laboriosam mollitia ab recusandae delectus ad exercitationem aut quod totam eum. Voluptas praesentium quisquam dolor odit officia, aut saepe distinctio eaque totam, in, repudiandae nemo dolorem incidunt perspiciatis itaque?</p>
     </div>
-    <div class="sections" id="work">
-        <h1>Work Experiences</h1>
-        <ul>
-            <li class="works">Lorem</li>
-            <li class="works">ipsum</li>
-            <li class="works">dolor</li>
-        </ul>
-    </div>
+    {% endblock %}
 </body>
 </html>

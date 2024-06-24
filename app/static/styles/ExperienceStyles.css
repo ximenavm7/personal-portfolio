@@ -1,0 +1,27 @@
+.education-element img {
+    border-radius: 50%;
+    max-width: 150px;
+    max-height: 150px;      
+    padding: 20px;
+}
+
+.education-element {
+    display: flex;
+    align-items:center;
+    gap: 10px;
+    text-align: justify;
+}
+
+.sections {
+    margin-bottom: 30px;
+}
+
+h1 {
+    padding: 40px 40px;
+    font-size: 40px;
+    color: #33032F;
+}
+
+h2 {
+    margin: 0;
+}
