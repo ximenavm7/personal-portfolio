@@ -101,8 +101,17 @@ a {
 }
 
 .sections {
-    height: 200px;
+    height: fit-content;
     padding: 20px 50px;
     text-align: justify;
 }
 
+#map h1 {
+    text-align: right;
+}
+
+#map iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
