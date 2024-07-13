@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+{%block head%}
+<link lang='sass' rel="stylesheet" href="./static/styles/timelineStyles.css">
+{%endblock%}
+{% block content %}
+<form id="timeline-form" action="/api/timeline_post" method="post">
+    <fieldset>
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="content">Content: </label>
+        <textarea id="content" name="content" required></textarea><br><br>
+    </fieldset>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
