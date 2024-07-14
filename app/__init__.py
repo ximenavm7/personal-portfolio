@@ -44,7 +44,7 @@ def projects():
 
 @app.route('/timeline')
 def timeline():
-    return render_template('timeline.html', title='Timeline', url=os.getenv("URL"))
+    return render_template('timeline.html', title='Timeline Posts', url=os.getenv("URL"))
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
