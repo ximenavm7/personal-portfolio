@@ -1,8 +1,9 @@
 {% extends "index.html" %}
-{%block head%}
+{% block head %}
 <link lang='sass' rel="stylesheet" href="./static/styles/timelineStyles.css">
-{%endblock%}
+{% endblock %}
 {% block content %}
+<h1>{{ title }}</h1>
 <form id="timeline-form" action="/api/timeline_post" method="post">
     <fieldset>
         <label for="name">Name: </label>
@@ -14,4 +15,56 @@
     </fieldset>
     <button type="submit">Submit</button>
 </form>
+
+<div id="message"></div>
+<div id="timeline-posts">
+    <!-- Timeline posts will be inserted here -->
+</div>
+
+<script>
+    const form = document.getElementById('timeline-form');
+
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const response = await fetch(this.action, {
+            method: 'POST',
+            body: formData
+        });
+        const messageDiv = document.getElementById('message');
+        if (response.ok) {
+            const newPost = await response.json();
+            addTimelinePost(newPost);
+            messageDiv.textContent = 'Post submitted successfully!';
+            messageDiv.style.color = 'green';
+        } else {
+            messageDiv.textContent = 'Failed to submit the post.';
+            messageDiv.style.color = 'red';
+        }
+    });
+
+    function addTimelinePost(post) {
+        const postElement = document.createElement('div');
+        postElement.classList.add('timeline-post');
+        postElement.innerHTML = `
+            <div class="user-info">
+                <h2>${post.name}</h2>
+                <p>(${post.email})</p>
+                <p> ${post.created_at} </p>
+            </div>
+            <div class="post-content">
+                <h4>${post.content}</h4>
+            </div>`;
+        const timelinePosts = document.getElementById('timeline-posts');
+        timelinePosts.insertBefore(postElement, timelinePosts.firstChild);
+    }
+
+    window.onload = async function() {
+        const response = await fetch('/api/timeline_post');
+        if (response.ok) {
+            const data = await response.json();
+            data.timeline_posts.forEach(addTimelinePost);
+        }
+    }
+</script>
 {% endblock %}
