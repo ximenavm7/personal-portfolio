@@ -34,14 +34,24 @@ label {
     color: #6b0863;
 }
   
+.buttons {
+    display : flex;
+    align-items: center;
+}
+
 button {
     display: block;
-    width: 50%;
+    width: 30%;
     margin: 1em auto;
     height: 2em;
     font-size: 1.1rem;
     background-color: #c978c2;
     border-color: #6b0863;
+}
+
+button[type="reset"] {
+    background-color: #f1b7ed;
+    border-color: #c978c2;
 }
 
 #timeline-posts {
