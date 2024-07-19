@@ -87,7 +87,7 @@ class AppTestCase(unittest.TestCase):
             "content" : "Hello world, I'm John!"
         })
         assert response.status_code == 400
-        html = response.get_data(as_text= True)
+        html = response.get_data(as_text=True)
         assert "Invalid name" in html
         
         # POST request with empty content
@@ -108,4 +108,4 @@ class AppTestCase(unittest.TestCase):
         })
         assert response.status_code == 400
         html = response.get_data(as_text=True)
-        assert "invalid email" in html
+        assert "Invalid email" in html
