@@ -1,0 +1,28 @@
+version: "3"
+services:
+  myportfolio:
+    container_name: myportfolio
+    build: . # Build the Docker image from the Dockerfile in the current directory
+    restart: always
+    env_file:
+      - .env # Load environment variables from the .env file
+    environment:
+      - FLASK_ENV=development
+    ports:
+      - "5000:5000" # Map port 5000 of the host to port 5000 of the container
+    volumes:
+      - .:/myportfolio # Ensure the mysql service is started before this service
+    depends_on:
+      - mysql # Ensure the mysql service is started before this service
+
+  mysql:
+    container_name: mysql
+    image: mariadb # Use the mariadb image from Docker Hub
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - mydatabase:/var/lib/mysql # Conserve the database data in a named volume to avoid deleting at restart
+
+volumes:
+  mydatabase: # Declare a named volume to store the MySQL database data
