@@ -18,6 +18,9 @@ echo "MYSQL_PASSWORD: "
 read password
 echo "MYSQL_DATABASE: "
 read db
+# Add extra information needed for Docker containers
+echo "MY_ROOT_PASSWORD: "
+read root
 
 # Create new ENV file
 touch .env
@@ -25,7 +28,9 @@ echo "URL=localhost:5000
 MYSQL_HOST=localhost
 MYSQL_USER=$user
 MYSQL_PASSWORD=$password
-MYSQL_DATABASE=$db" > .env
+MYSQL_DATABASE=$db
+MY_ROOT_PASSWORD=$root
+MARIADB_ROOT_PASSWORD=$root" > .env
 
 # Restart myportfolio service
 systemctl daemon-reload
