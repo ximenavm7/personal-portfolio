@@ -23,7 +23,7 @@ services:
     image: jonasal/nginx-certbot # Use the nginx-certbot image from Docker Hub to enable SSL
     restart: always
     environment:
-      - CERTBOT_NAME=name@example.com # Required environment variable to generate certificates
+      - CERTBOT_EMAIL=ximevzquez@gmail.com # Required environment variable to generate certificates
     ports: # Bind HTTP and HTTPS ports to the internet
       - 80:80
       - 443:443
