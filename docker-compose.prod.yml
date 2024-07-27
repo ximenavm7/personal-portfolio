@@ -19,6 +19,22 @@ services:
       - .env
     volumes:
       - mydatabase:/var/lib/mysql # Conserve the database data in a named volume to avoid deleting at restart
+  
+  nginx: # Define nginx container
+    container_name: nginx
+    image: jonasal/nginx-certbot # Use the nginx-certbot image from Docker Hub to enable SSL
+    restart: always
+    environment:
+      - CERTBOT_NAME=name@example.com # Required environment variable to generate certificates
+    ports: # Bind HTTP and HTTPS ports to the internet
+      - 80:80
+      - 443:443
+    volumes:
+      - nginx_secrets:/etc/letsencrypt # Store generated certificate files in a volume so they are not lost upon restart
+      - ./user_conf.d:/etc/nginx/user_conf.d # Mount custom Nginx configuration files from the host
+    depends_on:
+      - myportfolio # Ensure the flask app is started before this service
 
 volumes:
   mydatabase: # Declare a named volume to store the MySQL database data
+  nginx_secrets: # Define a named volume nginx_secrets
