@@ -6,8 +6,6 @@ services:
     restart: always
     env_file:
       - .env # Load environment variables from the .env file
-    ports:
-      - "5000:5000" # Map port 5000 of the host to port 5000 of the container
     depends_on:
       - mysql # Ensure the mysql service is started before this service
 
