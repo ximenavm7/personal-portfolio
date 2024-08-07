@@ -16,7 +16,7 @@ jobs: # Create a job named Run Tests running on the latest supported Ubuntu VM
       - name: Checkout Repository
         uses: actions/checkout@v2
         with: 
-          python-version: '3.6.8' # Change to desored python version
+          python-version: '3.6.8' # Change to desired python version
       
       - name: Setup Python Virtual Environment
         run: python -m venv python3-virtualenv
@@ -25,4 +25,4 @@ jobs: # Create a job named Run Tests running on the latest supported Ubuntu VM
         run: python3-virtualenv/bin/pip install -r requirements.txt
       
       - name: Run Tests
-        run: ./scripts/run-tests.sh
+        run: sh ./scripts/run-tests.sh
