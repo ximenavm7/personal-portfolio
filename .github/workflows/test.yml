@@ -15,8 +15,11 @@ jobs: # Create a job named Run Tests running on the latest supported Ubuntu VM
     steps: # Define steps to run tests
       - name: Checkout Repository
         uses: actions/checkout@v2
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with: 
-          python-version: '3.6.8' # Change to desired python version
+          python-version: '3.12.4'
       
       - name: Setup Python Virtual Environment
         run: python -m venv python3-virtualenv
@@ -24,5 +27,8 @@ jobs: # Create a job named Run Tests running on the latest supported Ubuntu VM
       - name: Install Dependencies
         run: python3-virtualenv/bin/pip install -r requirements.txt
       
+      - name: Grant execute permission for run-tests.sh
+        run: chmod +x ./scripts/run-tests.sh
+        
       - name: Run Tests
-        run: sh ./scripts/run-tests.sh
+        run: ./scripts/run-tests.sh
