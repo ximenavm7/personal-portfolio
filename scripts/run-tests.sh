@@ -1,7 +1,10 @@
 #!/bin/bash
 
-# Change to root directory
-cd ..
+# Change to the parent directory (project root)
+cd "$(dirname "$0")/.."
 
-# Execute "unittest" command to run tests in "tests" folder
-python3-virtualenv/bin/python -m unittest discover -v tests/
+# Activate the virtual environment
+source python3-virtualenv/bin/activate
+
+# Run the tests
+python -m unittest discover -v tests/
