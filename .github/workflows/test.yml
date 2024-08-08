@@ -25,10 +25,14 @@ jobs: # Create a job named Run Tests running on the latest supported Ubuntu VM
         run: python -m venv python3-virtualenv
       
       - name: Install Dependencies
-        run: python3-virtualenv/bin/pip install -r requirements.txt
+        run: |
+          source python3-virtualenv/bin/activate
+          pip install -r requirements.txt
       
       - name: Grant execute permission for run-tests.sh
         run: chmod +x ./scripts/run-tests.sh
         
       - name: Run Tests
-        run: ./scripts/run-tests.sh
+        run: |
+          source python3-virtualenv/bin/activate
+          ./scripts/run-tests.sh
